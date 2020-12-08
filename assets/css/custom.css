@@ -811,6 +811,7 @@ footer section .footer__para:hover {
 
 .copyright__section a {
 	color: var(--clr-grey);
+	font-size: var(--fs-xs-para);
 	transition-property: color,transform;
 	transition-duration: .4s;
 }
