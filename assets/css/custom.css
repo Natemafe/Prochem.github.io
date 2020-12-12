@@ -1193,7 +1193,7 @@ footer section .footer__para:hover {
 
 .contact__page {
 	position: relative;
-	min-height: 100vh;
+	min-height: 200vh;
 	justify-content: center;
 	align-items: center;
 	background: #2196f3;
@@ -1210,20 +1210,123 @@ footer section .footer__para:hover {
 }
 
 @media screen and (max-width: 48em) {
+
+	.contact__container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
 	.contact__page .contact__container {
 		position: relative;
-		min-width: 100%;
+		width: 100%;
 		min-height: 34.38em;
 		display: flex;
 		z-index: var(--z-index);
 		margin-top: 5.5em;
 	}
+
+	.contact__page .contact__container .contact__form {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		width: 26em;
+		height: auto;
+		top: 50%;
+		background: var(--clr-white);
+		border-radius: 5px;
+		box-shadow: 0 50px 50px rgba(0, 0, 0, .5);
+	}
+
+	.contact__page .contact__container .contact__form .form__box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		width: 100%;
+		padding-top: 1.88em;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox.w50 {
+		width: 80%;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox.w100 {
+		width: 90%;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox input,
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea {
+		width: 100%!important;
+		margin: 5px 0 5px 15px;
+		font-size: var(--fs-md-para);
+		font-weight: var(--fw-normal);
+		color: var(--clr-primary);
+		border: none;
+		border-bottom: 1px solid #777;
+		outline: none;
+		resize: none;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea {
+		min-height: 7.5em;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox span {
+		position: absolute;
+		left: 0;
+		top: -1px;
+		padding-left: 15px;
+		font-weight: var(--fw-normal);
+		color: var(--clr-primary);
+		transition: .5s;
+		pointer-events: none;
+	}
+
+	.contact__page .contact__container .contact__form h2 {
+		color: var(--clr-grey);
+		font-size: var(--fs-header3);
+		font-weight: var(--fw-dark);
+		padding: 140px 5px 10px 15px;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox {
+		position: relative;
+		margin: 0 0 2.19em 0;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox input:focus ~ span,
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea:focus ~ span,
+	.contact__page .contact__container .contact__form .form__box .inputBox input:valid ~ span,
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea:valid ~ span {
+		transform: translateY(-24px);
+		font-size: var(--fs-md-para);
+		font-weight: var(--fw-normal);
+		letter-spacing: 1px;
+		color: var(--clr-purple);
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox input[type="submit"] {
+		position: relative;
+		cursor: pointer;
+		background: linear-gradient(-270deg, #ff7800 8.6%, #ff5000 99.58%, #ff5000 100%);
+		color: var(--clr-text);
+		border: none;
+		max-width: 15em;
+		padding: .75em;
+		font-weight: var(--fw-dark);
+		border-radius: 1.25em;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox input[type="submit"]:hover {
+		opacity: .9;
+	}
 }
 
 .contact__page .contact__container .contact__info {
 	position: absolute;
-	top: 3.5em;
-	width: 21.88;
+	width: 18em;
 	height: calc(100% - 180px);
 	background: #0f3959;
 	z-index: 1;
@@ -1305,92 +1408,8 @@ footer section .footer__para:hover {
 	color: #000;
 }
 
-@media screen and (max-width: 48em) {
-	.contact__page .contact__container .contact__form {
-		display: none;
-	}
-}
 
-.contact__page .contact__container .contact__form h2 {
-	color: var(--clr-grey);
-	font-size: var(--fs-header3);
-	font-weight: var(--fw-dark);
-}
 
-.contact__page .contact__container .contact__form .form__box {
-	position: relative;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	padding-top: 1.88em;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox {
-	position: relative;
-	margin: 0 0 2.19em 0;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox.w50 {
-	width: 45%;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox.w100 {
-	width: 100%;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox input,
-.contact__page .contact__container .contact__form .form__box .inputBox textarea {
-	width: 100%!important;
-	padding: 5px 0;
-	font-size: var(--fs-md-para);
-	font-weight: var(--fw-normal);
-	color: var(--clr-primary);
-	border: none;
-	border-bottom: 1px solid #777;
-	outline: none;
-	resize: none;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox textarea {
-	min-height: 7.5em;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox span {
-	position: absolute;
-	left: 0;
-	padding: 5px 0;
-	font-weight: var(--fw-normal);
-	color: var(--clr-primary);
-	transition: .5s;
-	pointer-events: none;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox input:focus ~ span,
-.contact__page .contact__container .contact__form .form__box .inputBox textarea:focus ~ span,
-.contact__page .contact__container .contact__form .form__box .inputBox input:valid ~ span,
-.contact__page .contact__container .contact__form .form__box .inputBox textarea:valid ~ span {
-	transform: translateY(-30px);
-	font-size: var(--fs-md-para);
-    font-weight: var(--fw-normal);
-	letter-spacing: 1px;
-	color: var(--clr-purple);
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox input[type="submit"] {
-	position: relative;
-	cursor: pointer;
-	background: linear-gradient(-270deg, #ff7800 8.6%, #ff5000 99.58%, #ff5000 100%);
-	color: var(--clr-text);
-	border: none;
-	max-width: 15em;
-	padding: .75em;
-	font-weight: var(--fw-dark);
-	border-radius: 1.25em;
-}
-
-.contact__page .contact__container .contact__form .form__box .inputBox input[type="submit"]:hover {
-	opacity: .9;
-}
 
 
 
@@ -1929,6 +1948,10 @@ footer section .footer__para:hover {
 		font-weight: var(--fw-bold);
 	}
 
+	.contact__page {
+		min-height: 100vh;
+	}
+
 	.contact__page .contact__container .contact__form {
 		position: absolute;
 		padding: 4.38em 3em;
@@ -1953,6 +1976,94 @@ footer section .footer__para:hover {
 	.contact__page .contact__container .contact__info {
 		padding: 1.25em;
 		justify-content: space-between;
+		margin-left: .625em;
+		margin-top: 1.5em;
+	}
+
+	.contact__page .contact__container .contact__info {
+		top: 2.5em;
+	}
+
+	.contact__page .contact__container .contact__form .form__box {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		padding-top: 1.88em;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox.w50 {
+		width: 45%;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox.w100 {
+		width: 100%;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox input,
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea {
+		width: 100%!important;
+		padding: 5px 0;
+		font-size: var(--fs-md-para);
+		font-weight: var(--fw-normal);
+		color: var(--clr-primary);
+		border: none;
+		border-bottom: 1px solid #777;
+		outline: none;
+		resize: none;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea {
+		min-height: 7.5em;
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox span {
+		position: absolute;
+		left: 0;
+		padding: 5px 0;
+		font-weight: var(--fw-normal);
+		color: var(--clr-primary);
+		transition: .5s;
+		pointer-events: none;
+	}
+
+	.contact__page .contact__container .contact__form h2 {
+		color: var(--clr-grey);
+		font-size: var(--fs-header3);
+		font-weight: var(--fw-dark);
+	}
+	
+	.contact__page .contact__container .contact__form .form__box .inputBox {
+		position: relative;
+		margin: 0 0 2.19em 0;
+	}
+	
+
+	.contact__page .contact__container .contact__form .form__box .inputBox input:focus ~ span,
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea:focus ~ span,
+	.contact__page .contact__container .contact__form .form__box .inputBox input:valid ~ span,
+	.contact__page .contact__container .contact__form .form__box .inputBox textarea:valid ~ span {
+		transform: translateY(-30px);
+		font-size: var(--fs-md-para);
+		font-weight: var(--fw-normal);
+		letter-spacing: 1px;
+		color: var(--clr-purple);
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox input[type="submit"] {
+		position: relative;
+		cursor: pointer;
+		background: linear-gradient(-270deg, #ff7800 8.6%, #ff5000 99.58%, #ff5000 100%);
+		color: var(--clr-text);
+		border: none;
+		max-width: 15em;
+		padding: .75em;
+		font-weight: var(--fw-dark);
+		border-radius: 1.25em;
+	}
+
+	.contact__page .contact__container .contact__form .form__box .inputBox input[type="submit"]:hover {
+		opacity: .9;
 	}
 }
 
